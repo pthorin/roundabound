@@ -94,10 +94,11 @@ namespace Roundabound {
             using(ZipArchive arch = new ZipArchive(fs, ZipArchiveMode.Create)) {
                 arch.CreateEntryFromFile(filename, name);
             }
+            Delete(filename);
         }
 
-        private void Delete(string filePath) {
-            File.Delete(filePath);
+        private void Delete(string filename) {
+            File.Delete(filename);
         }
     }
 
